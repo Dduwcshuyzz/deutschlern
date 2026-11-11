@@ -37,6 +37,10 @@ an.onclick=()=>{
   let nf=0;jl.forEach((x,i)=>{let m=x.match(/function\s+([\w$]+)\s*\(/);if(m&&nf<150){out.push((i+1)+": ind"+((x.match(/^\s*/)||[""])[0].length)+" "+m[1]);nf++;}});
   out.push("--- METHOD STYLE name(args){ (first 150) ---");
   let nm=0;jl.forEach((x,i)=>{let m=x.match(/^\s*(?:async\s+)?([\w$]+)\s*\([^)]*\)\s*\{/);if(m&&nm<150&&!/^(if|for|while|switch|catch|function|return)$/.test(m[1])){out.push((i+1)+": ind"+((x.match(/^\s*/)||[""])[0].length)+" "+m[1]+"()");nm++;}});
+  out.push("--- STRING HITS (view/screen/more/account/profile) ---");
+  let nh=0;jl.forEach((x,i)=>{if(nh<200&&/view-|screen-|"more"|'more'|"account"|'account'|"profile"|'profile'|"grammar"|'grammar'|"dialogue"|'dialogue'|"quiz"|'quiz'|"review"|'review'|"exam"|'exam'|"store"|'store'/.test(x)){out.push((i+1)+": "+x.trim().slice(0,170));nh++;}});
+  out.push("--- CONST/LET/VAR (first 200) ---");
+  let nc=0;jl.forEach((x,i)=>{let m=x.match(/^\s*(const|let|var)\s+([\w$]+)/);if(m&&nc<200){out.push((i+1)+": ind"+((x.match(/^\s*/)||[""])[0].length)+" "+m[1]+" "+m[2]+" :: "+x.trim().slice(0,100));nc++;}});
   out.push("--- KEYWORD COUNTS ---");
   ["SUPABASE_URL","SUPABASE_ANON_KEY","createClient","LESSON","VOCAB","GRAMMAR","DIALOGUE","showPage","signIn","signUp","logout","flashcard","startExam","buyPackage","sync","initApp","currentUser","DEMO","addEventListener","DOMContentLoaded"].forEach(k=>{out.push(k+": "+(JS.split(k).length-1));});
   out.push("--- HTML page ids ---");
@@ -49,15 +53,15 @@ sp.onclick=()=>{
   let files={};files["css/style.css"]=CSS;
   let jl=JS.split("\n");
   let offs=[0];for(let i=0;i<jl.length;i++){offs.push(offs[i]+jl[i].length+1);}
-  let idx=R.bounds.map(b=>{let p;if(b.line!=null){p=offs[b.line-1];}else{p=JS.indexOf(b.m);}return {f:b.f,p:p};});
+  let idx=R.bounds.map(b=>{let p;if(b.line!=null){p=offs[b.line-1];}else{p=JS.indexOf(b.m);}return {f:b.f,p:p,line:b.line};});
   let miss=idx.filter(x=>x.p<0||x.p==null);
   if(miss.length){$("o").textContent="MISSING MARKERS: "+miss.map(x=>x.f).join(", ");return;}
   idx.sort((a,b)=>a.p-b.p);
-  let rep=["bounds: "+idx.map(x=>x.f+"@"+x.p).join(", ")];
+  let rep=["bounds: "+idx.map(x=>x.f+"@"+(x.line!=null?("L"+x.line):x.p)).join(", ")];
   let pre=JS.slice(0,idx[0].p);
   rep.push("PRE chars="+pre.length+" | head: "+pre.slice(0,300).replace(/\n/g," / "));
-  for(let i=0;i<idx.length;i++){let end=i+1<idx.length?idx[i+1].p:JS.length;files[idx[i].f]=JS.slice(idx[i].p,end);}
-  files[idx[0].f]=pre+files[idx[0].f];
+  for(let i=0;i<idx.length;i++){let end=i+1<idx.length?idx[i+1].p:JS.length;files[idx[i].f]=(files[idx[i].f]||"")+JS.slice(idx[i].p,end);}
+  Object.keys(files).forEach(k=>{if(k!=="css/style.css"){files[k]=pre+files[k];}});
   let h=T;
   h=h.replace(/<style[^>]*>[\s\S]*?<\/style>/i,'<link rel="stylesheet" href="css/style.css">');
   h=h.replace(/<style[^>]*>[\s\S]*?<\/style>/gi,"");
@@ -68,7 +72,7 @@ sp.onclick=()=>{
   if(!done){h=h.replace("</body>",tags+"\n</body>");}
   files["index.html"]=h;
   rep.push("FILES:");
-  Object.keys(files).forEach(k=>rep.push(k+" = "+files[k].length+" chars"));
+  Object.keys(files).forEach(k=>{let v=files[k];let bal=(v.match(/\{/g)||[]).length-(v.match(/\}/g)||[]).length;let ls=v.split("\n").filter(s=>s.trim().length>0);rep.push(k+" = "+v.length+" chars, balance="+bal+", first: "+(ls[0]||"").trim().slice(0,90)+" | last: "+(ls[ls.length-1]||"").trim().slice(0,90));});
   let lk=$("lk");lk.innerHTML="";
   Object.keys(files).forEach(k=>{let b=new Blob([files[k]],{type:"text/plain"});let a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=k.split("/").pop();a.textContent="DL "+k+" ("+files[k].length+")";a.style.display="block";lk.appendChild(a);});
   window._files=files;
