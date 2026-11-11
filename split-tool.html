@@ -4,7 +4,7 @@
 <h1>Split DeutschFlow</h1>
 <p><input type="file" id="f"> <button id="an" type="button">Analyze</button> <button id="sp" type="button">Split</button></p>
 <p>Rules JSON:</p>
-<textarea id="ru" rows="14" cols="70">{"order":["js/config.js","js/data.js","js/supabase.js","js/pages/intro.js","js/pages/dangnhap.js","js/pages/dangki.js","js/pages/home.js","js/pages/account.js","js/pages/learn.js","js/pages/review.js","js/pages/exam.js","js/pages/store.js","js/pages/vocab.js","js/pages/grammar.js","js/pages/dialogue.js","js/pages/quiz.js","js/pages/profile.js","js/app.js"],"bounds":[]}</textarea>
+<textarea id="ru" rows="14" cols="70">{"order":["js/config.js","js/data.js","js/supabase.js","js/pages/intro.js","js/pages/dangnhap.js","js/pages/dangki.js","js/pages/home.js","js/pages/learn.js","js/pages/vocab.js","js/pages/flashcards.js","js/pages/more.js","js/pages/account.js","js/pages/grammar.js","js/pages/dialogue.js","js/pages/quiz.js","js/pages/review.js","js/pages/exam.js","js/pages/store.js","js/pages/profile.js","js/app.js"],"bounds":[]}</textarea>
 <pre id="o">ready</pre>
 <div id="lk"></div>
 <script>
@@ -25,10 +25,10 @@ an.onclick=()=>{
   let jl=JS.split("\n");out.push("jsLines="+jl.length);
   out.push("--- BANNERS ---");
   jl.forEach((x,i)=>{let t=x.trim();if(t.length>4&&t.length<200&&/^(\/\/|\/\*)/.test(t)&&/(={3,}|-{3,}|PHẦN|SECTION|TRANG)/i.test(t))out.push((i+1)+": "+t.slice(0,180));});
-  out.push("--- TOP-LEVEL DECLS (first 250) ---");
-  let n=0;jl.forEach((x,i)=>{let mm=x.match(/^(?:async\s+)?function\s+([\w$]+)|^const\s+([\w$]+)\s*=|^let\s+([\w$]+)\s*=|^var\s+([\w$]+)\s*=|^class\s+([\w$]+)/);if(mm&&n<250){out.push((i+1)+": "+(mm[1]||mm[2]||mm[3]||mm[4]||mm[5]));n++;}});
+  out.push("--- DECLS indent<=2 (first 400) ---");
+  let n=0;jl.forEach((x,i)=>{let ind=(x.match(/^\s*/)||[""])[0].length;let mm=x.match(/^\s*(?:async\s+)?function\s+([\w$]+)|^\s*const\s+([\w$]+)\s*=|^\s*let\s+([\w$]+)\s*=|^\s*var\s+([\w$]+)\s*=|^\s*class\s+([\w$]+)/);if(mm&&ind<=2&&n<400){out.push((i+1)+": ["+ind+"] "+(mm[1]||mm[2]||mm[3]||mm[4]||mm[5]));n++;}});
   out.push("--- KEYWORD COUNTS ---");
-  ["SUPABASE_URL","SUPABASE_ANON_KEY","createClient","LESSON","VOCAB","GRAMMAR","DIALOGUE","showPage","signIn","signUp","logout","flashcard","startExam","buyPackage","sync","initApp","currentUser","DEMO"].forEach(k=>{out.push(k+": "+(JS.split(k).length-1));});
+  ["SUPABASE_URL","SUPABASE_ANON_KEY","createClient","LESSON","VOCAB","GRAMMAR","DIALOGUE","showPage","signIn","signUp","logout","flashcard","startExam","buyPackage","sync","initApp","currentUser","DEMO","addEventListener","DOMContentLoaded"].forEach(k=>{out.push(k+": "+(JS.split(k).length-1));});
   out.push("--- HTML page ids ---");
   [...T.matchAll(/id="([^"]+)"/g)].map(x=>x[1]).filter((v,i,a)=>a.indexOf(v)===i).forEach(id=>out.push("id: "+id));
   $("o").textContent=out.join("\n");
@@ -37,8 +37,10 @@ sp.onclick=()=>{
   if(!T){$("o").textContent="no file";return;}
   let R=JSON.parse($("ru").value);
   let files={};files["css/style.css"]=CSS;
-  let idx=R.bounds.map(b=>({f:b.f,p:JS.indexOf(b.m)}));
-  let miss=idx.filter(x=>x.p<0);
+  let jl=JS.split("\n");
+  let offs=[0];for(let i=0;i<jl.length;i++){offs.push(offs[i]+jl[i].length+1);}
+  let idx=R.bounds.map(b=>{let p;if(b.line!=null){p=offs[b.line-1];}else{p=JS.indexOf(b.m);}return {f:b.f,p:p};});
+  let miss=idx.filter(x=>x.p<0||x.p==null);
   if(miss.length){$("o").textContent="MISSING MARKERS: "+miss.map(x=>x.f).join(", ");return;}
   idx.sort((a,b)=>a.p-b.p);
   let rep=["bounds: "+idx.map(x=>x.f+"@"+x.p).join(", ")];
