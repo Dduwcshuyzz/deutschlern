@@ -106,7 +106,7 @@
       ["der Lehrer","der","die Lehrer","giáo viên nam","A1","W","Der Lehrer ist nett.","Thầy giáo tốt bụng."],
       ["die Lehrerin","die","die Lehrerinnen","giáo viên nữ","A1","W","Die Lehrerin erklärt alles gut.","Cô giáo giải thích mọi thứ rõ ràng."],
       ["der Hund","der","die Hunde","con chó","A1","Z","Der Hund ist freundlich.","Con chó thân thiện."],
-      ["die Katze","die","die Katzen","con mèo","A1","Z,"Die Katze schläft.","Con mèo đang ngủ."],
+      ["die Katze","die","die Katzen","con mèo","A1","Z","Die Katze schläft.","Con mèo đang ngủ."],
       ["der Garten","der","die Gärten","khu vườn","A1","Z","Der Garten ist schön.","Khu vườn đẹp."],
       ["die Blume","die","die Blumen","bông hoa","A1","Z","Die Blume ist gelb.","Bông hoa màu vàng."],
       ["der Baum","der","die Bäume","cái cây","A1","Z","Der Baum ist alt.","Cái cây đã già."],
