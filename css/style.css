@@ -1252,3 +1252,23 @@ footer.land .wrap>span{display:block;text-align:center}
 .lesson-head .ls-lock{color:#7A8AA6}
 .lesson-head .ls-open{color:#0061FF}
 }
+
+/* ==================== BỔ SUNG POLISH THEO CLASS THẬT (2026-11-11) ==================== */
+.stat-card{border-radius:16px;box-shadow:0 8px 22px rgba(13,21,36,.06);border:1px solid #E7ECF5}
+.stat-grid>div>span{color:#4D5B73}
+.lesson-row{border-radius:16px;box-shadow:0 8px 22px rgba(13,21,36,.06)}
+.lesson-prog-txt{font-size:.78rem;color:#4D5B73;font-weight:600}
+.lvl-row .lv{color:#0D1524}
+.lvl-row .pct{color:#0D1524}
+.lvl-row .bar-wrap span{color:#4D5B73}
+.quick-card{border-radius:18px;box-shadow:0 8px 22px rgba(13,21,36,.06)}
+/* Khóa Dark Mode: khẳng định lại các màu bổ sung bằng giá trị tuyệt đối bảng sáng. */
+@media (prefers-color-scheme:dark){
+.stat-card{background:#FFFFFF;border-color:#E7ECF5;color:#0D1524}
+.stat-grid>div>span{color:#4D5B73}
+.lesson-row{background:#FFFFFF;border-color:#E7ECF5}
+.lesson-prog-txt{color:#4D5B73}
+.lvl-row .lv,.lvl-row .pct{color:#0D1524}
+.lvl-row .bar-wrap span{color:#4D5B73}
+.quick-card{background:#FFFFFF;border-color:#E7ECF5}
+}
