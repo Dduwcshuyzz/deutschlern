@@ -7,6 +7,8 @@
 <textarea id="ru" rows="14" cols="70">{"order":["js/config.js","js/data.js","js/supabase.js","js/pages/intro.js","js/pages/dangnhap.js","js/pages/dangki.js","js/pages/home.js","js/pages/learn.js","js/pages/vocab.js","js/pages/flashcards.js","js/pages/more.js","js/pages/account.js","js/pages/grammar.js","js/pages/dialogue.js","js/pages/quiz.js","js/pages/review.js","js/pages/exam.js","js/pages/store.js","js/pages/profile.js","js/app.js"],"bounds":[]}</textarea>
 <pre id="o">ready</pre>
 <div id="lk"></div>
+<p>Xem file: <select id="vf"></select> từ ký tự <input id="vs" type="number" value="0" style="width:100px"> đến <input id="ve" type="number" value="15000" style="width:100px"> <button id="sh" type="button">Show</button> <span id="vl"></span></p>
+<textarea id="vw" rows="18" cols="100" readonly></textarea>
 <script>
 let T="",JS="",CSS="";
 const $=id=>document.getElementById(id);
@@ -76,6 +78,8 @@ sp.onclick=()=>{
   let lk=$("lk");lk.innerHTML="";
   Object.keys(files).forEach(k=>{let b=new Blob([files[k]],{type:"text/plain"});let a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=k.split("/").pop();a.textContent="DL "+k+" ("+files[k].length+")";a.style.display="block";lk.appendChild(a);});
   window._files=files;
+  let sel=$("vf");sel.innerHTML="";Object.keys(files).forEach(k=>{let o=document.createElement("option");o.value=k;o.textContent=k+" ("+files[k].length+")";sel.appendChild(o);});
   $("o").textContent=rep.join("\n");
 };
+sh.onclick=()=>{let k=$("vf").value;let s=parseInt($("vs").value||"0",10);let e=parseInt($("ve").value||"15000",10);let v=(window._files&&window._files[k])||"";$("vl").textContent=k+" total="+v.length+" show "+s+".."+e;$("vw").value=v.slice(s,e);};
 </script>
