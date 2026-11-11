@@ -5,7 +5,7 @@
     function showAuth(mode){
       var login = mode === "login", reg = mode === "register", forgot = mode === "forgot", reset = mode === "reset";
       showScreen("auth");
-      document.querySelectorAll(".auth-form").forEach(function(f){ f.classList.toggle("hidden", f.id !== "form" + mode[0].toUpperCase() + mode.slice(1)); });
+      $("authTabs").classList.toggle("hidden", forgot || reset); $("tabLogin").classList.toggle("on", login); $("tabReg").classList.toggle("on", reg); $("formLogin").classList.toggle("hidden", !login); $("formReg").classList.toggle("hidden", !reg); $("formForgot").classList.toggle("hidden", !forgot); $("formReset").classList.toggle("hidden", !reset);
       var lvMeta = LEVELS.filter(function(x){ return x.id === pendingLevel; })[0]; $("rgLevelNote").textContent = "Bạn vừa chọn cấp " + pendingLevel + (lvMeta ? " — " + lvMeta.name : "") + ".";
       $("authTitle").textContent = login ? "Đăng nhập" : reg ? "Đăng ký" : reset ? "Đặt mật khẩu mới" : "Quên mật khẩu";
       $("authSub").textContent = login ? "Tiếp tục hành trình học ngôn ngữ của bạn." : reg ? "Tạo tài khoản để lưu tiến độ học của bạn." : reset ? "Nhập mật khẩu mới cho tài khoản của bạn." : "Nhập email đã đăng ký để nhận liên kết đặt lại mật khẩu.";
@@ -19,16 +19,16 @@
       if (typeof ga === "function") ga("auth", mode);
       if (login) { $("liEmail").focus(); }
       if (reg) { $("rgName").focus(); }
-      if (forgot) { $("fgEmail").focus(); }
-      if (reset) { $("rsPass").focus(); }
+      if (forgot) { $("fgId").focus(); }
+      if (reset) { $("rpPass").focus(); }
       window.scrollTo(0, 0);
     }
     function setAuthTab(mode){
-      document.querySelectorAll(".auth-tab").forEach(function(t){ t.classList.toggle("active", t.getAttribute("data-auth-tab") === mode); });
+      $("tabLogin").classList.toggle("on", mode === "login"); $("tabReg").classList.toggle("on", mode === "register");
       showAuth(mode);
     }
-    document.querySelectorAll("[data-auth-tab]").forEach(function(t){
-      t.addEventListener("click", function(){ setAuthTab(t.getAttribute("data-auth-tab")); });
+    ["tabLogin","tabReg"].forEach(function(id, i){
+      $(id).addEventListener("click", function(){ setAuthTab(i === 0 ? "login" : "register"); });
     });
     function fieldErr(inputId, errId, msg){
       var el = $(errId);
