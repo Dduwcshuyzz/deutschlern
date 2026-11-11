@@ -6,7 +6,7 @@
       var login = mode === "login", reg = mode === "register", forgot = mode === "forgot", reset = mode === "reset";
       showScreen("auth");
       document.querySelectorAll(".auth-form").forEach(function(f){ f.classList.toggle("hidden", f.id !== "form" + mode[0].toUpperCase() + mode.slice(1)); });
-      $("rgLevelNote").textContent = "Bạn vừa chọn cấp " + pendingLevel + (lvMeta ? " — " + lvMeta.name : "") + ".";
+      var lvMeta = LEVELS.filter(function(x){ return x.id === pendingLevel; })[0]; $("rgLevelNote").textContent = "Bạn vừa chọn cấp " + pendingLevel + (lvMeta ? " — " + lvMeta.name : "") + ".";
       $("authTitle").textContent = login ? "Đăng nhập" : reg ? "Đăng ký" : reset ? "Đặt mật khẩu mới" : "Quên mật khẩu";
       $("authSub").textContent = login ? "Tiếp tục hành trình học ngôn ngữ của bạn." : reg ? "Tạo tài khoản để lưu tiến độ học của bạn." : reset ? "Nhập mật khẩu mới cho tài khoản của bạn." : "Nhập email đã đăng ký để nhận liên kết đặt lại mật khẩu.";
       $("swLoginText").textContent = login ? "Chưa có tài khoản?" : "Đã có tài khoản?";
