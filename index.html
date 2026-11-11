@@ -31,7 +31,7 @@
               <a class="navlink" href="#levels">Cấp độ</a>
               <a class="navlink" href="#features">Tính năng</a>
               <a class="navlink" href="#bat-dau">Cách bắt đầu</a>
-              <a class="navlink" href="#faq">Hỏi đáp</a>
+              <a class="navlink" href="#faq">Hỏi đáp</a><a class="navlink" href="#goi-nang-cap">Gói nâng cấp</a>
               <button class="btn btn-text btn-sm" data-auth="login">Đăng nhập</button>
               <button class="btn btn-red btn-sm" data-auth="register">Đăng ký</button>
             </nav>
@@ -78,10 +78,10 @@
             </div>
           </div>
           <div class="df-realstats">
-            <div class="st"><b>6</b><span>cấp độ A1–C2</span></div>
-            <div class="st"><b data-stat="vocab">–</b><span>từ vựng có ví dụ</span></div>
-            <div class="st"><b data-stat="lessons">–</b><span>bài học theo chủ đề</span></div>
-            <div class="st"><b data-stat="grammar">–</b><span>chủ điểm ngữ pháp</span></div>
+            <div class="st"><b>6</b><span>cấp độ A1–C2</span><small>A1 · A2 · B1 · B2 · C1 · C2</small></div>
+            <div class="st"><b data-stat="vocab">–</b><span>từ vựng có ví dụ</span><small>Có phiên âm, loại từ và ví dụ</small></div>
+            <div class="st"><b data-stat="lessons">–</b><span>bài học theo chủ đề</span><small>3 bài cho mỗi cấp độ</small></div>
+            <div class="st"><b data-stat="grammar">–</b><span>chủ điểm ngữ pháp</span><small>Từ der / die / das đến Konjunktiv II</small></div>
           </div>
         </section>
 
@@ -91,7 +91,7 @@
             <h2>6 cấp độ, đi từ con số 0 đến thành thạo</h2>
             <p>Mỗi cấp độ có bài học theo chủ đề, từ vựng và ngữ pháp riêng. Học lần lượt từ A1 hoặc nhảy thẳng tới cấp độ phù hợp với bạn — bấm vào một cấp độ để mở form đăng ký với cấp đó được chọn sẵn làm mục tiêu.</p>
           </div>
-          <div class="levels-grid" id="levelsGrid"></div>
+          <div class="levels-grid" id="levelsGrid"></div><div class="level-lessons"><article class="ll-item"><p class="ll-head"><b>A1 · Khởi đầu</b><span>3 bài · 50 từ</span></p><p class="ll-desc">Chào hỏi, giới thiệu bản thân, nói về gia đình, nhà cửa, ăn uống và đi chợ.</p><ol><li>Chào hỏi &amp; giới thiệu bản thân</li><li>Gia đình &amp; nhà cửa</li><li>Ăn uống &amp; đi chợ</li></ol></article><article class="ll-item"><p class="ll-head"><b>A2 · Cơ bản</b><span>3 bài · 36 từ</span></p><p class="ll-desc">Kể chuyện đã qua với thì Perfekt, nói về sức khỏe, khám bác sĩ, du lịch và phương tiện.</p><ol><li>Kể về ngày hôm qua (Perfekt)</li><li>Sức khỏe &amp; đi khám bác sĩ</li><li>Du lịch &amp; phương tiện</li></ol></article><article class="ll-item"><p class="ll-head"><b>B1 · Trung cấp</b><span>3 bài · 30 từ</span></p><p class="ll-desc">Trình bày ý kiến, phỏng vấn xin việc và thuê nhà ở Đức.</p><ol><li>Trình bày ý kiến</li><li>Phỏng vấn xin việc</li><li>Thuê nhà ở Đức</li></ol></article><article class="ll-item"><p class="ll-head"><b>B2 · Trung cao cấp</b><span>3 bài · 24 từ</span></p><p class="ll-desc">Tranh luận và lập luận, nói về môi trường, xã hội và chủ đề học thuật.</p><ol><li>Tranh luận &amp; lập luận</li><li>Môi trường &amp; xã hội</li><li>Học thuật &amp; nghiên cứu</li></ol></article><article class="ll-item"><p class="ll-head"><b>C1 · Nâng cao</b><span>3 bài · 12 từ</span></p><p class="ll-desc">Diễn đạt học thuật nâng cao, đàm phán và thuyết phục.</p><ol><li>Diễn đạt học thuật nâng cao</li><li>Đàm phán &amp; thuyết phục</li><li>Bài nghị luận &amp; phân tích văn bản</li></ol></article><article class="ll-item"><p class="ll-head"><b>C2 · Thành thạo</b><span>3 bài · 12 từ</span></p><p class="ll-desc">Dùng ngôn ngữ tinh tế, lập luận phức tạp và văn phong học thuật – chuyên nghiệp.</p><ol><li>Ngôn ngữ tinh tế</li><li>Lập luận phức tạp</li><li>Văn phong học thuật – chuyên nghiệp</li></ol></article></div><p class="ll-note">Mỗi bài học có hội thoại, từ vựng, trắc nghiệm 10 câu và mẹo ngữ pháp đi kèm.</p>
         </section>
 
         <section class="section" id="features">
@@ -103,17 +103,17 @@
               <div class="hero-cta"><button class="btn btn-red" data-auth="register">Tạo tài khoản để vào học</button></div>
             </div>
             <div>
-              <div class="feat-row"><div class="feat-num">01</div><div><h3>Khóa học theo cấp độ</h3><p>18 bài học theo chủ đề đời sống: chào hỏi, ăn uống, du lịch, xin việc, thuê nhà, tranh luận… Mỗi bài có câu mẫu, từ vựng và mẹo ngữ pháp.</p></div></div>
-              <div class="feat-row"><div class="feat-num">02</div><div><h3>Từ vựng kèm giống &amp; số nhiều</h3><p>Mỗi danh từ đều ghi rõ der / die / das và dạng số nhiều — thứ người học tiếng Đức hay sai nhất — kèm câu ví dụ và nút nghe phát âm.</p></div></div>
-              <div class="feat-row"><div class="feat-num">03</div><div><h3>Flashcard ôn tập</h3><p>Lật thẻ để ghi nhớ, đánh dấu “đã thuộc” cho từng từ. Danh sách từ đã thuộc được tính vào tiến độ của bạn.</p></div></div>
-              <div class="feat-row"><div class="feat-num">04</div><div><h3>Ngữ pháp trọng tâm</h3><p>12 chủ điểm cốt lõi từ mạo từ, Akkusativ / Dativ đến Perfekt và Konjunktiv II, giải thích ngắn gọn bằng tiếng Việt với ví dụ.</p></div></div>
-              <div class="feat-row"><div class="feat-num">05</div><div><h3>Hội thoại tình huống</h3><p>Các đoạn hội thoại thật như ở quán cà phê, ga tàu, phòng khám, phỏng vấn — nghe từng câu hoặc nghe toàn bộ.</p></div></div>
-              <div class="feat-row"><div class="feat-num">06</div><div><h3>Trắc nghiệm &amp; điểm XP</h3><p>Làm bài trắc nghiệm 10 câu, chấm điểm ngay, cộng điểm XP. Hoàn thành bài học và sưu tập thành tích trong trang cá nhân.</p></div></div>
+              <div class="feat-row"><div class="feat-num">01</div><div><span class="feat-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg></span><h3>Khóa học theo cấp độ</h3><p>18 bài học theo chủ đề đời sống: chào hỏi, ăn uống, du lịch, xin việc, thuê nhà, tranh luận… Mỗi bài có câu mẫu, từ vựng và mẹo ngữ pháp.</p></div></div>
+              <div class="feat-row"><div class="feat-num">02</div><div><span class="feat-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5h16v2"/><path d="M9 20h6"/><path d="M12 5v15"/></svg></span><h3>Từ vựng kèm giống &amp; số nhiều</h3><p>Mỗi danh từ đều ghi rõ der / die / das và dạng số nhiều — thứ người học tiếng Đức hay sai nhất — kèm câu ví dụ và nút nghe phát âm.</p></div></div>
+              <div class="feat-row"><div class="feat-num">03</div><div><span class="feat-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span><h3>Flashcard ôn tập</h3><p>Lật thẻ để ghi nhớ, đánh dấu “đã thuộc” cho từng từ. Danh sách từ đã thuộc được tính vào tiến độ của bạn.</p></div></div>
+              <div class="feat-row"><div class="feat-num">04</div><div><span class="feat-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg></span><h3>Ngữ pháp trọng tâm</h3><p>12 chủ điểm cốt lõi từ mạo từ, Akkusativ / Dativ đến Perfekt và Konjunktiv II, giải thích ngắn gọn bằng tiếng Việt với ví dụ.</p></div></div>
+              <div class="feat-row"><div class="feat-num">05</div><div><span class="feat-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span><h3>Hội thoại tình huống</h3><p>Các đoạn hội thoại thật như ở quán cà phê, ga tàu, phòng khám, phỏng vấn — nghe từng câu hoặc nghe toàn bộ.</p></div></div>
+              <div class="feat-row"><div class="feat-num">06</div><div><span class="feat-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><h3>Trắc nghiệm &amp; điểm XP</h3><p>Làm bài trắc nghiệm 10 câu, chấm điểm ngay, cộng điểm XP. Hoàn thành bài học và sưu tập thành tích trong trang cá nhân.</p></div></div>
             </div>
           </div>
         </section>
 
-        <section class="section" id="bat-dau">
+        <div class="feat-grid feat-extra"><p class="feat-more">Thêm nữa — hai công cụ kiểm tra và ôn tập:</p><article class="feat-card"><span class="feat-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/></svg></span><h3>Thi thử</h3><p>Thi thử 15 câu trong 10 phút: 10 câu từ vựng và 5 câu ngữ pháp, chấm điểm ngay theo thang /15 — đạt từ 10/15.</p><span class="feat-chip">15 câu · 10 phút · chấm điểm /15</span></article><article class="feat-card"><span class="feat-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg></span><h3>Ôn lỗi sai</h3><p>Câu trả lời sai trong trắc nghiệm và thi thử được lưu lại, để bạn ôn đúng chỗ hay sai và không lặp lại lỗi cũ.</p><span class="feat-chip">Ôn theo lỗi của chính bạn</span></article></div><section class="section" id="bat-dau">
           <div class="section-head">
             <span class="tag red">Bắt đầu</span>
             <h2>Vào học trong 3 bước</h2>
@@ -134,12 +134,12 @@
               <div class="step-card">
                 <div class="n">3</div>
                 <h3>Vào học với menu đầy đủ</h3>
-                <p>Đăng nhập xong là vào thẳng bên trong: khóa học, từ vựng, flashcard, ngữ pháp, hội thoại, trắc nghiệm, điểm XP và thành tích đều tính cho tài khoản của bạn.</p>
+                <p>Đăng nhập xong là vào thẳng bên trong: khóa học, từ vựng, flashcard, ngữ pháp, hội thoại, trắc nghiệm, thi thử và ôn lỗi sai — điểm XP và thành tích đều tính cho tài khoản của bạn.</p>
               </div>
             </div>
           </section>
 
-        <section class="section" id="sample">
+        <section class="section land-preview" id="xem-truoc-bai"><div class="section-head"><span class="tag red">Xem trước bài học</span><h2>Xem trước một bài học thật</h2><p>Đây là nội dung thật trong app — bài đầu tiên của cấp độ A1 và một từ mẫu trong kho 164 từ.</p></div><div class="preview-grid"><article class="pv-card"><span class="pv-badge">A1 · Bài 1</span><h3>Chào hỏi &amp; giới thiệu bản thân</h3><p class="pv-goal">Mục tiêu: chào hỏi, hỏi tên, quê quán và nghề nghiệp của người đối diện.</p><ul class="pv-list"><li><b>Guten Morgen!</b><span>Chào buổi sáng!</span></li><li><b>Wie heißt du?</b><span>Bạn tên là gì?</span></li><li><b>Ich heiße Anna.</b><span>Tôi tên là Anna.</span></li><li><b>Woher kommst du?</b><span>Bạn đến từ đâu?</span></li><li><b>Ich komme aus Vietnam.</b><span>Tôi đến từ Việt Nam.</span></li></ul><p class="pv-tip"><b>Mẹo ngữ pháp:</b> động từ sein (là / thì): ich bin, du bist, er / sie ist, wir sind, ihr seid, sie sind. Ví dụ: Ich bin Lehrer — Tôi là giáo viên.</p><p class="pv-foot">Bài học còn có hội thoại đầy đủ, từ vựng kèm phát âm và trắc nghiệm 10 câu.</p></article><article class="pv-card pv-wordcard"><span class="pv-badge pv-badge-blue">Từ mẫu · trong kho 164 từ</span><p class="pv-word"><span class="art">das</span> Buch</p><p class="pv-mean">Danh từ trung tính · <b>cuốn sách</b></p><p class="pv-plural">Số nhiều: <b>die Bücher</b></p><p class="pv-ex">Das Buch ist interessant.<span>Cuốn sách này hay.</span></p><p class="pv-note">Một từ trong kho 164 từ của DeutschFlow — mỗi từ đều có phiên âm, loại từ, số nhiều và câu ví dụ.</p><button class="btn btn-red" data-auth="register">Bắt đầu học từ bài 1</button></article></div></section><section class="section" id="sample">
           <div class="section-head">
             <span class="tag red">Xem trước</span>
             <h2>Thử ngay vài từ đầu tiên</h2>
@@ -168,7 +168,7 @@
           </div>
         </section>
 
-        <section class="section" id="faq">
+        <section class="section land-plans" id="goi-nang-cap"><div class="section-head"><span class="tag red">Gói nâng cấp</span><h2>Bắt đầu miễn phí, nâng cấp khi cần</h2><p>Gói miễn phí đủ để bắt đầu. Khi muốn mở thêm cấp độ và thi thử, bạn có thể nâng cấp trong app — không cần đăng ký lại.</p></div><div class="plan-grid"><article class="plan-card"><h3>Miễn phí</h3><p class="plan-tagline">Bắt đầu học ngay</p><ul class="plan-feats"><li>18 bài học A1–C2</li><li>164 từ vựng &amp; 12 chủ điểm ngữ pháp</li><li>Flashcard, hội thoại và trắc nghiệm 10 câu sau mỗi bài</li><li>Luyện nghe phát âm</li></ul><button class="btn btn-red plan-cta" data-auth="register">Tạo tài khoản miễn phí</button></article><article class="plan-card hot"><span class="plan-flag">Phổ biến</span><h3>Plus</h3><p class="plan-tagline">Học không giới hạn, không quảng cáo</p><ul class="plan-feats"><li>Mở khóa toàn bộ 18 bài học A1–C2</li><li>Thi thử 15 câu trong 10 phút, chấm điểm chi tiết</li><li>Luyện nghe phát âm</li><li>Theo dõi tiến độ nâng cao</li></ul><button class="btn btn-red plan-cta" data-auth="register">Tìm hiểu gói Plus</button></article><article class="plan-card"><h3>Pro</h3><p class="plan-tagline">Toàn bộ tính năng và lộ trình cá nhân</p><ul class="plan-feats"><li>Tất cả quyền lợi của Plus</li><li>Lộ trình cá nhân hóa theo mục tiêu</li><li>Trò chuyện AI luyện phản xạ</li><li>Ưu tiên hỗ trợ</li></ul><button class="btn btn-ghost plan-cta" data-auth="register">Tìm hiểu gói Pro</button></article></div><p class="plan-note">Giá cụ thể và điều khoản đầy đủ được hiển thị trong app, mục Nâng cấp &amp; khóa học sau khi bạn đăng nhập.</p></section><section class="section" id="faq">
           <div class="section-head">
             <span class="tag red">Hỏi đáp</span>
             <h2>Câu hỏi thường gặp về tài khoản</h2>
@@ -210,7 +210,7 @@
           <div class="wrap">
             <span><b>DeutschFlow</b> — web học tiếng Đức cho người Việt.</span>
             <span>Mọi nhân vật, tên người và tình huống trong bài học đều là hư cấu, dùng cho mục đích học tập.</span>
-            <span>© 2026 DeutschFlow</span>
+            <nav class="ft-grid" aria-label="Liên kết trong trang"><div><h4>DeutschFlow</h4><p>Học tiếng Đức từ A1 đến C2 qua bài học ngắn, từ vựng thực tế và thi thử.</p></div><div><h4>Khám phá</h4><ul><li><a href="#levels">Lộ trình A1–C2</a></li><li><a href="#features">Tính năng</a></li><li><a href="#bat-dau">Cách bắt đầu</a></li><li><a href="#xem-truoc-bai">Xem trước bài học</a></li><li><a href="#sample">Từ vựng mẫu</a></li><li><a href="#goi-nang-cap">Gói nâng cấp</a></li><li><a href="#faq">Hỏi đáp</a></li></ul></div><div><h4>Tài khoản</h4><ul><li><a href="#tai-khoan">Đăng ký / Đăng nhập</a></li><li><a href="#goi-nang-cap">Gói nâng cấp</a></li><li><a href="#faq">Câu hỏi thường gặp</a></li></ul><p class="ft-note">Đăng nhập để lưu tiến độ, điểm XP và gói đang dùng.</p></div></nav><span>© 2026 DeutschFlow</span>
           </div>
         </footer>
       </div>
