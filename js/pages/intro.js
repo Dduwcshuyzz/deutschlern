@@ -32,7 +32,7 @@
     });
 
     /* ==================== LANDING ==================== */
-    function renderLanding(){
+    /* Bấm thẻ cấp độ: mở form Đăng ký với cấp đã chọn (khôi phục sau khi tách file). */ document.addEventListener("click", function(e){   var lc = e.target.closest("[data-level-card]");   if(lc){     pendingLevel = lc.getAttribute("data-level-card");     showAuth("register");     var rg = $("rgLevel");     if(rg) rg.value = pendingLevel;     var nt = $("rgLevelNote");     if(nt) nt.classList.remove("hidden");   } }); document.addEventListener("keydown", function(e){   if((e.key === "Enter" || e.key === " ") && e.target.matches("[data-level-card]")){     e.preventDefault();     pendingLevel = e.target.getAttribute("data-level-card");     showAuth("register");     var rg2 = $("rgLevel");     if(rg2) rg2.value = pendingLevel;     var nt2 = $("rgLevelNote");     if(nt2) nt2.classList.remove("hidden");   } }); function renderLanding(){
       ["vocab", "lessons", "grammar"].forEach(function(key){
         var val = key === "vocab" ? VOCAB.length : key === "lessons" ? LESSONS.length : GRAMMAR.length;
         document.querySelectorAll('[data-stat="' + key + '"]').forEach(function(el){ el.textContent = val; });
