@@ -84,7 +84,7 @@
       el.classList.toggle("hidden", !msg);
     }
     document.querySelectorAll("[data-auth]").forEach(function(b){ b.addEventListener("click", function(){ showAuth(b.getAttribute("data-auth")); }); });
-    showAuth("login");
+    if (typeof showScreen === "function") showAuth("login");
     document.querySelectorAll("[data-quit]").forEach(function(b){ b.addEventListener("click", function(){ showScreen("landing"); }); });
 
     /* Đăng nhập local: tài khoản demo và tài khoản tạo trong phiên khi Supabase không khả dụng */
