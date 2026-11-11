@@ -288,3 +288,6 @@
         toast("Đã đăng xuất. Hẹn gặp lại bạn!");
       }
       ["btnLogout","btnLogout2","btnLogout3"].forEach(function(id){ $(id).addEventListener("click", logout); });
+
+/* validEmail: khôi phục — từng có trong file đơn gốc (a6f447a), bị rơi khi tách file; đăng ký/đăng nhập/quên mật khẩu đều gọi nó. */
+function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
