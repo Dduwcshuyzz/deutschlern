@@ -181,9 +181,9 @@
               if (r2.data && r2.data.user) { done(r2.data.user); return; }
               authErr("Đã tạo tài khoản. " + sbAuthErrVi(r2.error));
             }, function(){ authErr("Đã tạo tài khoản nhưng chưa đăng nhập được ngay. Hãy thử Đăng nhập lại nhé."); });
-          }, function(){ finishRegisterLocal(name, username, email, pass, target); });
-        });
-      });
+          }}, function(){ finishRegisterLocal(name, username, email, pass, target); });
+        }
+      }
     });
     /* Dự phòng khi Supabase không khả dụng: tài khoản chỉ sống trong phiên này */
     function finishLogin(idf, pass){
