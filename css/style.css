@@ -945,3 +945,13 @@ width:1.32rem; height:1.32rem; stroke-width:1.7; flex:none;
 .hero-df .df-have{max-width:none;}
 .hero-df .df-preview{padding:1.05rem 1rem 1rem;}
 }
+/* ===== Sửa sau khi kiểm tra lại HTML: .df-preview là thẻ trắng, phần đỏ là .df-road bên trong; .df-pv-note nằm ngoài thẻ, trên nền trang trắng — nên chữ phải đậm, không dùng trắng. ===== */
+.hero-df .df-preview{background:var(--surface);border:1px solid var(--line);box-shadow:0 18px 40px rgba(23,24,28,.12);}
+.hero-df .df-pv-top{color:var(--ink);border-bottom:1px solid var(--line);}
+.hero-df .df-pv-top .dots i{background:#D8D2C4;}
+.hero-df .df-pv-top .dots i:first-child{background:var(--red);}
+.hero-df .df-pv-note{color:#4D5B73;}
+@media(prefers-color-scheme:dark){
+.hero-df .df-pv-note{color:#A3B0C6;}
+.hero-df .df-pv-top .dots i{background:#3A3B42;}
+}
