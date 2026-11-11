@@ -182,7 +182,7 @@
               authErr("Đã tạo tài khoản. " + sbAuthErrVi(r2.error));
             }, function(){ authErr("Đã tạo tài khoản nhưng chưa đăng nhập được ngay. Hãy thử Đăng nhập lại nhé."); });
           }}, function(){ finishRegisterLocal(name, username, email, pass, target); });
-        }
+        } catch (err) { authErr("Không thể kết nối máy chủ đăng nhập. Vui lòng thử lại sau."); }
       }
     });
     /* Dự phòng khi Supabase không khả dụng: tài khoản chỉ sống trong phiên này */
