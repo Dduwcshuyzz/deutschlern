@@ -1138,3 +1138,117 @@ footer.land .wrap>span{display:block;text-align:center}
   .hero-df .df-stat span{ color:#4D5B73 !important; }
   .hero-df .df-stat b{ color:#0D1524 !important; }
 }
+
+/* ==================== NÂNG CẤP MÀN TRONG APP (2026-11-11) ==================== */
+/* Màu tuyệt đối theo bảng sáng dùng ở trang giới thiệu: nền #FFFFFF, chữ #0D1524,
+   chữ phụ #4D5B73, viền #DEE7F5, đỏ #D5001C, xanh #0061FF, xanh lá #0E7A5F, vàng #B7791F. */
+.page-head h2{color:#0D1524;font-size:26px;letter-spacing:-.02em}
+.page-head p{color:#4D5B73}
+.df-kicker{color:#D5001C;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.df-title{color:#0D1524;font-size:22px;font-weight:800;letter-spacing:-.02em;margin:2px 0 4px}
+.card{border-radius:18px;border:1px solid #E7ECF5;box-shadow:0 10px 28px rgba(13,21,36,.07)}
+.stat{background:#FFFFFF;border:1px solid #E7ECF5;border-radius:16px;box-shadow:0 8px 22px rgba(13,21,36,.06)}
+.stat b{color:#0D1524}
+.stat span{color:#4D5B73}
+.dash-hero{background:#FFFFFF;border:1px solid #E7ECF5;border-radius:20px;box-shadow:0 10px 28px rgba(13,21,36,.07);padding:18px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.xp-ring{flex:0 0 auto;text-align:center}
+.xp-ring svg{display:block}
+.xp-ring .xp-lbl{font-size:12px;color:#4D5B73;margin-top:2px}
+.dash-hero-info{flex:1;min-width:200px}
+.dash-hero-info h3{color:#0D1524;font-size:18px;margin:0 0 4px}
+.dash-hero-info p{color:#4D5B73;margin:0 0 10px}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap}
+.pill{background:#EDF3FF;color:#0D1524;border:1px solid #DEE7F5;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700}
+.pill.hot{background:#FDECEC;color:#D5001C;border-color:#F6C9C9}
+.pill.ok{background:#E7F6F0;color:#0E7A5F;border-color:#BFE6D6}
+.ach-strip{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:thin}
+.ach-badge{flex:0 0 auto;background:#FFFFFF;border:1px solid #E7ECF5;border-radius:16px;padding:10px 12px;min-width:132px;box-shadow:0 6px 18px rgba(13,21,36,.05)}
+.ach-badge .ic{font-size:20px}
+.ach-badge b{display:block;color:#0D1524;font-size:14px}
+.ach-badge span{color:#4D5B73;font-size:12px}
+.ach-badge.locked{opacity:.8;background:#F4F6FB}
+.ach-badge.locked b{color:#4D5B73}
+.continue-card{background:linear-gradient(135deg,#D5001C,#8F0013);border-radius:20px;color:#FFFFFF;padding:18px;box-shadow:0 12px 30px rgba(213,0,28,.28)}
+.continue-card h3{color:#FFFFFF}
+.continue-card p{color:#FFE3E6}
+.continue-card .btn{background:#FFFFFF;color:#D5001C}
+.week-ring{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.week-ring .wr-num{font-size:22px;font-weight:800;color:#0D1524}
+.week-ring .wr-lbl{color:#4D5B73;font-size:13px}
+.mini-prog{height:8px;background:#EDF3FF;border-radius:999px;overflow:hidden}
+.mini-prog i{display:block;height:100%;background:#D5001C;border-radius:999px}
+.mini-prog.blue i{background:#0061FF}
+.mini-prog.green i{background:#0E7A5F}
+.lesson-prog{height:8px;background:#EDF3FF;border-radius:999px;overflow:hidden;margin-top:8px}
+.lesson-prog i{display:block;height:100%;background:#0061FF;border-radius:999px}
+.lesson-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.lesson-head .ls-done{color:#0E7A5F;font-size:12px;font-weight:800;white-space:nowrap}
+.lesson-head .ls-lock{color:#7A8AA6;font-size:12px;font-weight:800;white-space:nowrap}
+.lesson-head .ls-open{color:#0061FF;font-size:12px;font-weight:800;white-space:nowrap}
+.lesson-card{border-radius:18px;box-shadow:0 10px 28px rgba(13,21,36,.07);border:1px solid #E7ECF5}
+.level-prog-row{display:flex;align-items:center;gap:10px;margin:6px 0}
+.level-prog-row .lp-name{width:34px;font-weight:800;color:#0D1524}
+.level-prog-row .mini-prog{flex:1}
+.level-prog-row .lp-num{font-size:12px;color:#4D5B73;white-space:nowrap}
+.v-counts{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.v-count{background:#FFFFFF;border:1px solid #E7ECF5;border-radius:999px;padding:6px 12px;font-size:13px;color:#0D1524;font-weight:700}
+.v-count b{color:#D5001C}
+.fc-prog{height:8px;background:#EDF3FF;border-radius:999px;overflow:hidden;margin:8px 0 4px}
+.fc-prog-fill{display:block;height:100%;background:#0061FF;border-radius:999px;transition:width .25s}
+.fc-card{border-radius:20px!important;box-shadow:0 16px 36px rgba(13,21,36,.14)!important;border:1px solid #E7ECF5}
+.fc-card .front,.fc-card .back{border-radius:20px}
+.fc-actions .btn{border-radius:14px;font-weight:800}
+.mistake-item{background:#FFFFFF;border:1px solid #E7ECF5;border-left:4px solid #D5001C;border-radius:16px;padding:14px;margin-bottom:10px;box-shadow:0 6px 18px rgba(13,21,36,.05)}
+.mistake-item .m-word{color:#0D1524;font-weight:800;font-size:16px}
+.mistake-item .m-vi{color:#4D5B73}
+.mistake-item .m-ans{color:#0E7A5F;font-weight:700;margin-top:6px}
+.mistake-item .m-ans b{color:#0E7A5F}
+.rv-prog{height:10px;background:#EDF3FF;border-radius:999px;overflow:hidden;margin:8px 0 14px}
+.rv-prog i{display:block;height:100%;background:#0E7A5F;border-radius:999px}
+.exam-intro{background:linear-gradient(135deg,#0D1524,#1E3A6E);border-radius:20px;color:#FFFFFF;padding:20px;box-shadow:0 14px 32px rgba(13,21,36,.25)}
+.exam-intro h3,.exam-intro p{color:#FFFFFF}
+.exam-intro p{opacity:.85}
+.exam-intro .btn{background:#FFFFFF;color:#0D1524}
+.exam-score{font-size:44px;font-weight:800;color:#0D1524;line-height:1}
+.exam-score small{font-size:18px;color:#4D5B73}
+.ex-review-item{background:#FFFFFF;border:1px solid #E7ECF5;border-radius:14px;padding:12px 14px;margin-bottom:8px}
+.ex-review-item.ok{border-left:4px solid #0E7A5F}
+.ex-review-item.bad{border-left:4px solid #D5001C}
+.ex-review-item .q{color:#0D1524;font-weight:700}
+.ex-review-item .a{color:#4D5B73;font-size:14px}
+.ex-review-item .a b{color:#0E7A5F}
+.ex-review-item.bad .a b{color:#D5001C}
+.ex-review-item .ua{color:#D5001C;font-size:14px}
+/* Khóa Dark Mode: khẳng định lại các màu mới bằng giá trị tuyệt đối bảng sáng. */
+@media (prefers-color-scheme:dark){
+.page-head h2,.df-title,.stat b,.dash-hero-info h3,.ach-badge b,.mistake-item .m-word,.level-prog-row .lp-name,.v-count,.exam-score,.ex-review-item .q{color:#0D1524}
+.page-head p,.dash-hero-info p,.stat span,.ach-badge span,.mistake-item .m-vi,.level-prog-row .lp-num,.xp-ring .xp-lbl,.week-ring .wr-lbl,.ex-review-item .a{color:#4D5B73}
+.card,.stat,.dash-hero,.ach-badge,.mistake-item,.ex-review-item{background:#FFFFFF;border-color:#E7ECF5}
+.ach-badge.locked{background:#F4F6FB}
+.ach-badge.locked b{color:#4D5B73}
+.df-kicker{color:#D5001C}
+.pill{background:#EDF3FF;color:#0D1524;border-color:#DEE7F5}
+.pill.hot{background:#FDECEC;color:#D5001C;border-color:#F6C9C9}
+.pill.ok{background:#E7F6F0;color:#0E7A5F;border-color:#BFE6D6}
+.mini-prog,.lesson-prog,.fc-prog,.rv-prog{background:#EDF3FF}
+.mini-prog i,.lesson-prog i{background:#0061FF}
+.mini-prog.green i,.rv-prog i{background:#0E7A5F}
+.fc-prog-fill{background:#0061FF}
+.continue-card{background:linear-gradient(135deg,#D5001C,#8F0013);color:#FFFFFF}
+.continue-card h3{color:#FFFFFF!important}
+.continue-card p{color:#FFE3E6}
+.continue-card .btn{background:#FFFFFF!important;color:#D5001C!important}
+.exam-intro{background:linear-gradient(135deg,#0D1524,#1E3A6E);color:#FFFFFF}
+.exam-intro h3,.exam-intro p{color:#FFFFFF}
+.exam-intro .btn{background:#FFFFFF!important;color:#0D1524!important}
+.mistake-item{border-left-color:#D5001C}
+.mistake-item .m-ans,.mistake-item .m-ans b,.ex-review-item .a b{color:#0E7A5F}
+.ex-review-item.ok{border-left-color:#0E7A5F}
+.ex-review-item.bad{border-left-color:#D5001C}
+.ex-review-item.bad .a b,.ex-review-item .ua{color:#D5001C}
+.exam-score small{color:#4D5B73}
+.fc-card{border-color:#E7ECF5}
+.lesson-head .ls-done{color:#0E7A5F}
+.lesson-head .ls-lock{color:#7A8AA6}
+.lesson-head .ls-open{color:#0061FF}
+}
