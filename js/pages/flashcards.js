@@ -37,7 +37,7 @@ function showFc(){
   if(fill) fill.style.width=Math.round((fcIdx+1)/fcDeck.length*100)+"%";
 }
 $("fcCard").addEventListener("click", function(){ $("fcCard").classList.toggle("flipped"); });
-$("fcSpeak").addEventListener("click", function(e){ e.stopPropagation(); if(fcDeck.length) speakText(fcDeck[fcIdx][0]+" "+fcDeck[fcIdx][1]); });
+$("fcSpeak").addEventListener("click", function(e){ e.stopPropagation(); if(fcDeck.length) speakText(fcDeck[fcIdx][0]); });
 $("fcPrev").addEventListener("click", function(){ fcIdx--; showFc(); });
 $("fcNext").addEventListener("click", function(){ fcIdx++; showFc(); });
 $("fcUnknown").addEventListener("click", function(){ fcSessionUnknown++; fcIdx++; showFc(); });
