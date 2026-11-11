@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><title>Test Supabase SDK</title></head>
+<body>
+<h1>Test Supabase SDK</h1>
+<pre id="out">SDK: loading...
+window.supabase: checking...</pre>
+<script>
+function log(m){ var el=document.getElementById('out'); el.textContent += '\n' + m; }
+var done=false;
+var s=document.createElement('script');
+s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
+var t=setTimeout(function(){ if(!done){ done=true; log('SDK: timeout'); log('window.supabase: ' + (typeof window.supabase)); log('RESULT: SDK_TIMEOUT'); } }, 15000);
+s.onload=function(){
+  if(done) return; done=true; clearTimeout(t);
+  log('SDK: loaded');
+  log('window.supabase: ' + (typeof window.supabase));
+  if(window.supabase){
+    try{
+      var sb=window.supabase.createClient('https://trticnmlaujbtavfgoym.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRydGljbm1sYXVqYnRhdmZnb3ltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQzNjgxMjksImV4cCI6MjEwOTk0NDEyOX0.D6vnJBRAS2L-lM7uGQyInzSqDFz57fHz3Gm109D5_Zo');
+      Promise.race([sb.auth.getSession(), new Promise(function(_,rej){ setTimeout(function(){ rej(new Error('timeout 15s')); },15000); })]).then(function(r){
+        log('getSession: success');
+        log('getSession data: ' + JSON.stringify(r.data));
+        log('getSession error: ' + JSON.stringify(r.error));
+        log('RESULT: GETSESSION_OK');
+      }).catch(function(e){ log('getSession: error/timeout: ' + (e && e.message)); log('RESULT: GETSESSION_TIMEOUT_OR_ERROR'); });
+    }catch(e){ log('createClient error: ' + e.message); log('RESULT: CREATECLIENT_ERROR'); }
+  } else { log('RESULT: SDK_LOADED_BUT_NO_WINDOW_SUPABASE'); }
+};
+s.onerror=function(){ if(done) return; done=true; clearTimeout(t); log('SDK: error'); log('window.supabase: ' + (typeof window.supabase)); log('RESULT: SDK_ERROR'); };
+document.head.appendChild(s);
+</script>
+</body>
+</html>
