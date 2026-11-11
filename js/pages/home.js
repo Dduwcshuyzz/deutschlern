@@ -11,7 +11,7 @@ function refreshStats(){
   $("stQuiz").textContent = p.quizPlays ? p.quizBest + "/10" : "—";
 }
 /* Thang XP cho cấp độ (mốc tuyệt đối, XP là dữ liệu thật của người dùng). */
-var XP_LEVELS = [0, 100, 250, 450, 700, 1000, 1500];
+var XP_LEVELS = [0, 100, 250, 450, 700, 1000];
 function xpLevelInfo(xp){
   var i = 0;
   while (i < XP_LEVELS.length - 1 && xp >= XP_LEVELS[i + 1]) i++;
