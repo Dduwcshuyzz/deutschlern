@@ -1,5 +1,5 @@
 
-    "use strict";
+    "use strict"; function $(id){ return document.getElementById(id); }
     
     /* ==================== SUPABASE — AUTH + DỮ LIỆU NGƯỜI DÙNG ====================
        Đăng nhập / đăng ký dùng Supabase Auth thật của project "deutschflow"
