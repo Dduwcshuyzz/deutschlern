@@ -29,9 +29,9 @@
     var accounts = {};
     accounts["demo@deutschflow.vn"] = { name:"Học viên Demo", username:"demo", email:"demo@deutschflow.vn", pass:"demo123", target:"B1", plan:"free", owned:[], orders:[], progress:newProgress() };
     function todayKey(){ return new Date().toISOString().slice(0, 10); }
-    function ensureToday(){
+    function ensureToday(p){
       var p = prog();
-      if (!p.today || p.today.key !== todayKey()) p.today = { key: todayKey(), xp:0, lessons:0, words:0, stripes:0 };
+      if (!p.today || p.today.key !== todayKey()) p.today = { key: todayKey(), xp:0, lessons:0, words:0, quiz:0, stripes:0 }; return p.today;
     }
     function addMistake(kind, id, label, level){
       var p = prog();
