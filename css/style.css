@@ -848,3 +848,46 @@
       .prof-row span{ color:var(--ink2); }
       .clickable{ cursor:pointer; }
       .clickable:hover{ border-color:var(--gold); }
+
+/* ===== Bottom tab bar redesign: thin uniform icons, Muse-blue active pill ===== */
+:root{
+--tab-blue:#0061FF; --tab-pill:#E2EDFF; --tab-bar-bg:#FFFFFF; --tab-bar-line:#E7E3D9;
+}
+@media (prefers-color-scheme: dark){
+:root{ --tab-pill:#14315F; --tab-bar-bg:#000000; --tab-bar-line:#26262B; }
+}
+@media (max-width:900px){
+.bottombar{
+background:var(--tab-bar-bg);
+border-top:1px solid var(--tab-bar-line);
+padding:.45rem .5rem calc(.45rem + env(safe-area-inset-bottom));
+gap:.25rem;
+}
+.bottombar button{
+color:var(--ink2);
+font-size:.68rem; font-weight:600; letter-spacing:.01em; line-height:1.15;
+gap:.28rem; padding:.3rem 0 .25rem; min-height:3.45rem; border-radius:12px;
+-webkit-tap-highlight-color:transparent;
+transition:color .18s ease;
+}
+.bottombar button .tab-ic{
+display:flex; align-items:center; justify-content:center;
+width:3.3rem; height:1.95rem; border-radius:999px;
+transition:background .18s ease, transform .12s ease;
+}
+.bottombar button svg{
+width:1.32rem; height:1.32rem; stroke-width:1.7; flex:none;
+}
+.bottombar button:active .tab-ic{ transform:scale(.93); }
+.bottombar button:focus-visible{ outline:2px solid var(--tab-blue); outline-offset:2px; }
+.bottombar button.on{ color:var(--tab-blue); font-weight:700; }
+.bottombar button.on .tab-ic{ background:var(--tab-pill); }
+@media (prefers-color-scheme: dark){
+.bottombar button.on{ color:#7FAEFF; }
+.bottombar button.on .tab-ic{ color:#8FB6FF; }
+}
+@media (prefers-reduced-motion: reduce){
+.bottombar button, .bottombar button .tab-ic{ transition:none; }
+.bottombar button:active .tab-ic{ transform:none; }
+}
+}
