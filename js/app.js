@@ -43,7 +43,7 @@
     function removeMistake(kind, id) { var p = prog(); p.mistakes = (p.mistakes || []).filter(function(m){ return !(m.kind === kind && m.id === id); }); }
     var PLANS = {
       free: { name:"Miễn phí", level:0, price:0, tagline:"Lộ trình A1–C2, flashcard, ngữ pháp & hội thoại", feats:["<b>✓</b> 18 bài học A1–C2","<b>✓</b> 164 từ vựng &amp; 12 chủ điểm ngữ pháp","<b>—</b> Thi thử không giới hạn","<b>—</b> Luyện nghe phát âm AI"] },
-      plus: { name:"Plus", level:1, price:49000, tagline:"Học không giới hạn, không quảng cáo", feats:["<b>✓</b> Mở khóa toàn bộ 18 bài học A1–C2","<b>✓</b> Thi thử không giới hạn, chấm điểm chi tiết","<b>✓</b> Luyện nghe phát âm AI","<b>✓</b> Theo dõi tiến độ nâng cao"] },
+      plus: { name:"Plus", level:1, price:49000, hot:true, tagline:"Học không giới hạn, không quảng cáo", feats:["<b>✓</b> Mở khóa toàn bộ 18 bài học A1–C2","<b>✓</b> Thi thử không giới hạn, chấm điểm chi tiết","<b>✓</b> Luyện nghe phát âm AI","<b>✓</b> Theo dõi tiến độ nâng cao"] },
       pro: { name:"Pro", level:2, price:99000, tagline:"Toàn bộ tính năng và lộ trình cá nhân", feats:["<b>✓</b> Tất cả quyền lợi của Plus","<b>✓</b> Lộ trình cá nhân hóa theo mục tiêu","<b>✓</b> Trò chuyện AI luyện phản xạ","<b>✓</b> Ưu tiên hỗ trợ"] }
     };
     var COURSE_PRICE = { "A1":0, "A2":0, "B1":149000, "B2":149000, "C1":199000, "C2":199000 };
