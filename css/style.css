@@ -1010,3 +1010,91 @@ width:1.32rem; height:1.32rem; stroke-width:1.7; flex:none;
 @media (prefers-reduced-motion: reduce){
   .hero-df .df-grid > div:first-child, .hero-df .df-preview{ animation:none !important; }
 }
+
+/* ===== Landing 2026-11-12: cac muc moi — chi dung mau sang tuyet doi (giu khoa Dark Mode o 10d57b9) ===== */
+.df-realstats{background:#FFFFFF;border:1px solid #DEE7F5;border-radius:20px;padding:18px 20px;box-shadow:0 10px 28px rgba(13,21,36,.07)}
+.df-realstats .st small{display:block;font-size:12px;line-height:1.45;color:#4D5B73;margin-top:4px}
+.section-head h2{color:#0D1524}
+.level-lessons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+.ll-item{background:#FFFFFF;border:1px solid #DEE7F5;border-radius:18px;padding:18px;box-shadow:0 8px 24px rgba(13,21,36,.06)}
+.ll-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 0 6px}
+.ll-head b{color:#0D1524;font-size:15px}
+.ll-head span{color:#D5001C;font-weight:700;font-size:12px;white-space:nowrap}
+.ll-desc{color:#4D5B73;font-size:14px;line-height:1.55;margin:0}
+.ll-item ol{margin:10px 0 0;padding-left:18px;color:#0D1524;font-size:14px;line-height:1.6}
+.ll-note{color:#4D5B73;font-size:13px;text-align:center;margin:16px 0 0}
+.feat-layout>div:last-child{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.feat-row{background:#FFFFFF;border:1px solid #DEE7F5;border-radius:18px;padding:18px;box-shadow:0 8px 24px rgba(13,21,36,.06)}
+.feat-row:last-child{border:1px solid #DEE7F5}
+.feat-row h3{color:#0D1524}
+.feat-row p{color:#4D5B73}
+.feat-ic{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:#E3EDFF;color:#D5001C;margin-bottom:10px}
+.feat-ic svg{width:22px;height:22px}
+.feat-chip{background:#EDF3FF;color:#0061FF}
+.feat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0 0 28px}
+.feat-more{grid-column:1/-1;color:#0D1524;font-weight:700;margin:0}
+.feat-card{background:#FFFFFF;border:1px solid #DEE7F5;border-radius:18px;padding:20px;box-shadow:0 8px 24px rgba(13,21,36,.06);display:flex;flex-direction:column;gap:8px}
+.feat-card h3{color:#0D1524;font-size:17px;margin:0}
+.feat-card p{color:#4D5B73;font-size:14.5px;line-height:1.55;margin:0}
+.preview-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch}
+.pv-card{background:#FFFFFF;border:1px solid #DEE7F5;border-radius:20px;padding:22px;box-shadow:0 10px 28px rgba(13,21,36,.07);display:flex;flex-direction:column;gap:10px}
+.pv-card h3{color:#0D1524;font-size:20px;margin:0}
+.pv-badge{display:inline-block;align-self:flex-start;background:#D5001C;color:#FFFFFF;font-size:12px;font-weight:700;letter-spacing:.04em;border-radius:999px;padding:6px 12px}
+.pv-badge-blue{background:#0061FF}
+.pv-goal{color:#4D5B73;margin:0;line-height:1.55}
+.pv-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.pv-list li{display:flex;flex-direction:column;background:#EDF3FF;border-radius:12px;padding:10px 12px}
+.pv-list li b{color:#0D1524}
+.pv-list li span{color:#4D5B73;font-size:13.5px}
+.pv-tip{background:#FFFFFF;border:1px solid #DEE7F5;border-left:4px solid #0061FF;border-radius:12px;padding:12px 14px;color:#0D1524;line-height:1.55;margin:0}
+.pv-foot{color:#4D5B73;font-size:13.5px;margin:0}
+.pv-word{font-size:34px;font-weight:800;color:#0D1524;margin:0}
+.pv-word .art{color:#D5001C}
+.pv-mean,.pv-plural{color:#4D5B73;margin:0}
+.pv-mean b,.pv-plural b{color:#0D1524}
+.pv-ex{background:#EDF3FF;border-radius:14px;padding:12px 14px;color:#0D1524;font-weight:700;display:flex;flex-direction:column;gap:2px;margin:0}
+.pv-ex span{color:#4D5B73;font-weight:400;font-size:13.5px}
+.pv-note{color:#4D5B73;font-size:13.5px;line-height:1.55;margin:0}
+.pv-wordcard .btn{margin-top:auto;align-self:flex-start}
+.land-plans .plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.land-plans .plan-card{position:relative;background:#FFFFFF;border:1px solid #DEE7F5;border-radius:20px;padding:22px;box-shadow:0 10px 28px rgba(13,21,36,.07);display:flex;flex-direction:column;gap:10px}
+.land-plans .plan-card.hot{border:2px solid #D5001C}
+.plan-flag{position:absolute;top:-12px;left:20px;background:#D5001C;color:#FFFFFF;font-size:12px;font-weight:700;border-radius:999px;padding:5px 12px}
+.land-plans .plan-card h3{color:#0D1524;font-size:22px;margin:0}
+.plan-tagline{color:#4D5B73;margin:0}
+.plan-feats{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:8px}
+.plan-feats li{color:#0D1524;font-size:14.5px;line-height:1.5;padding-left:22px;position:relative}
+.plan-feats li::before{content:"✓";position:absolute;left:0;color:#0E7A5F;font-weight:800}
+.plan-cta{margin-top:auto;width:100%;justify-content:center}
+.land-plans .plan-card .btn-ghost{background:#FFFFFF;color:#0D1524;border:1px solid #DEE7F5}
+.plan-note{color:#4D5B73;font-size:13.5px;text-align:center;margin:18px 0 0}
+footer.land{background:#FFFFFF;border-top:1px solid #DEE7F5}
+footer.land .wrap{display:block;text-align:center}
+footer.land .wrap>span{display:block;text-align:center}
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px;text-align:left;margin:0 auto;max-width:980px;padding:10px 0 22px}
+.ft-grid h4{color:#0D1524;margin:0 0 10px;font-size:15px}
+.ft-grid p{color:#4D5B73;font-size:14px;line-height:1.55;margin:0}
+.ft-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ft-grid a{color:#0061FF;text-decoration:none;font-size:14px}
+.ft-grid a:hover{text-decoration:underline}
+.ft-note{margin-top:10px !important;font-size:13px !important}
+.step-card{background:#FFFFFF;border:1px solid #DEE7F5;border-radius:18px;box-shadow:0 8px 24px rgba(13,21,36,.06)}
+.step-card h3{color:#0D1524}
+.step-card p{color:#4D5B73}
+@media (max-width:900px){
+  .level-lessons{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .preview-grid{grid-template-columns:1fr}
+  .land-plans .plan-grid{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .level-lessons,.feat-layout>div:last-child,.feat-grid{grid-template-columns:1fr}
+  .df-realstats .st{flex:1 1 42%}
+  .ft-grid{grid-template-columns:1fr}
+  .pv-word{font-size:28px}
+}
+@media (prefers-color-scheme:dark){
+  .df-realstats,.ll-item,.feat-row,.feat-card,.pv-card,.land-plans .plan-card,.step-card,footer.land{background:#FFFFFF !important;border-color:#DEE7F5 !important}
+  .df-realstats .st b,.ll-head b,.feat-row h3,.feat-card h3,.pv-card h3,.land-plans .plan-card h3,.step-card h3,.ft-grid h4{color:#0D1524 !important}
+  .df-realstats .st span,.df-realstats .st small,.ll-desc,.feat-row p,.feat-card p,.pv-goal,.pv-note,.plan-tagline,.plan-note,.step-card p,.ft-grid p{color:#4D5B73 !important}
+}
