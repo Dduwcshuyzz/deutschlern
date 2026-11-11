@@ -955,3 +955,15 @@ width:1.32rem; height:1.32rem; stroke-width:1.7; flex:none;
 .hero-df .df-pv-note{color:#A3B0C6;}
 .hero-df .df-pv-top .dots i{background:#3A3B42;}
 }
+/* ===== Sửa sau khi kiểm tra trên web thật: .df-preview vốn là thẻ ĐỎ (Muse-clean) và .df-pv-note nằm trong thẻ đỏ, nên giữ nền đỏ + chữ trắng; đồng thời từ tiếng Đức trong dòng từ vựng đang kế thừa màu trắng của thẻ đỏ nên tàng hình trên ô trắng — ép lại màu mực. ===== */
+.hero-df .df-preview{background:linear-gradient(180deg,#D5001C 0%,#A80016 60%,#7F0012 100%);border-color:transparent;box-shadow:0 18px 40px rgba(168,0,22,.35);color:#fff;}
+.hero-df .df-pv-top{color:rgba(255,255,255,.92);border-bottom:1px solid rgba(255,255,255,.28);}
+.hero-df .df-pv-top .dots i{background:rgba(255,255,255,.85);}
+.hero-df .df-pv-top .dots i:first-child{background:rgba(255,255,255,.85);}
+.hero-df .df-pv-note{color:rgba(255,255,255,.78);}
+.hero-df .df-vocab .row b{color:var(--ink);}
+.hero-df .df-vocab .row span{color:var(--ink2);}
+@media(prefers-color-scheme:dark){
+.hero-df .df-pv-note{color:rgba(255,255,255,.78);}
+.hero-df .df-pv-top .dots i{background:rgba(255,255,255,.85);}
+}
