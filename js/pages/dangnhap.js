@@ -110,7 +110,7 @@
       if (pass.length < 6) ok = fieldErr("rgPass", "eRgPass", "Mật khẩu cần ít nhất 6 ký tự.") && ok;
       if (pwScore(pass) < 2) ok = fieldErr("rgPass", "eRgPass", "Mật khẩu chưa đủ mạnh. Thử thêm chữ hoa, số hoặc ký tự đặc biệt nhé.") && ok;
       if (pass !== pw2) ok = fieldErr("rgPass2", "eRgPass2", "Mật khẩu nhập lại chưa khớp.") && ok;
-      if (!$("rgAgree").checked) ok = fieldErr("rgAgree", "eRgAgree", "Bạn cần đồng ý với điều khoản để tiếp tục.") && ok;
+      if ($("rgAgree")&&!$("rgAgree").checked) ok = fieldErr("rgAgree", "eRgAgree", "Bạn cần đồng ý với điều khoản để tiếp tục.") && ok;
       return ok;
     }
     function localRegister(name, username, email, pass, target){
