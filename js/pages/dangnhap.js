@@ -17,7 +17,7 @@
       document.querySelectorAll(".field input, .field select").forEach(function(i){ i.classList.remove("invalid"); });
       authErr("");
       if (typeof ga === "function") ga("auth", mode);
-      if (login) { $("lgId").focus(); }
+      if (login) { $("liEmail").focus(); }
       if (reg) { $("rgName").focus(); }
       if (forgot) { $("fgEmail").focus(); }
       if (reset) { $("rsPass").focus(); }
@@ -116,7 +116,7 @@
     function localRegister(name, username, email, pass, target){
       return { name: name, username: username, email: email, pass: pass, target: target, plan:"free", owned:[], orders:[], progress:newProgress() };
     }
-    $("formLogin").addEventListener("submit", function(e){
+    /* Handler đăng nhập chính ở js/pages/dangki.js; bản trùng lặp tại đây đã vô hiệu hoá. */ $("formLogin").addEventListener("submit", function(e){ return;
       e.preventDefault();
       clearFieldErrs();
       var idf = $("lgId").value.trim();
