@@ -5,28 +5,28 @@
     var pendingBuy = null;
     function buyLabel(item){
       if (!item) return "";
-      if (item.type === "plan") { var pl = PLANS.filter(function(x){ return x.id === item.id; })[0]; return pl ? "Gói " + pl.name : ""; }
+      if (item.type === "plan") { var pl = PLANS[item.id]; return pl ? "Gói " + pl.name : ""; }
       var lv = LEVELS.filter(function(x){ return x.id === item.id; })[0];
       return "Khóa " + item.id + (lv ? " — " + lv.name : "");
     }
     function buyPrice(item){
       if (!item) return 0;
-      if (item.type === "plan") { var pl = PLANS.filter(function(x){ return x.id === item.id; })[0]; return pl ? pl.price : 0; }
+      if (item.type === "plan") { var pl = PLANS[item.id]; return pl ? pl.price : 0; }
       return COURSE_PRICE[item.id] || 0;
     }
     function renderStore(){
       if (!currentUser) return;
       if (!currentUser.orders) currentUser.orders = [];
       if (!currentUser.owned) currentUser.owned = [];
-      var cur = PLANS.filter(function(x){ return x.id === userPlan(); })[0];
+      var cur = PLANS[currentUser.plan || "free"];
       $("storePlanName").textContent = cur ? cur.name : "Miễn phí";
-      $("planGrid").innerHTML = PLANS.map(function(pl){
-        var isCur = pl.id === userPlan();
-        var lower = planRank(pl.id) < planRank(userPlan());
+      $("planGrid").innerHTML = ["free","plus","pro"].map(function(pid){ var pl = PLANS[pid];
+        var isCur = pid === (currentUser.plan || "free");
+        var lower = pl.level < userPlan();
         var btn = isCur ? '<span class="cur-badge">Gói bạn đang dùng</span>'
           : lower ? '<button class="btn btn-ghost" disabled>Gói thấp hơn gói hiện tại</button>'
-          : pl.id === "free" ? '<button class="btn btn-ghost" disabled>Gói mặc định</button>'
-          : '<button class="btn btn-red" data-buy-plan="' + pl.id + '">Nâng cấp lên ' + pl.name + "</button>";
+          : pid === "free" ? '<button class="btn btn-ghost" disabled>Gói mặc định</button>'
+          : '<button class="btn btn-red" data-buy-plan="' + pid + '">Nâng cấp lên ' + pl.name + "</button>";
         return '<div class="plan-card' + (pl.hot ? " hot" : "") + '"><span class="pname">' + pl.name + (pl.hot ? ' <span class="tag red" style="margin-left:.3rem">Phổ biến</span>' : "") + '</span><div class="price">' + (pl.price ? fmtVND(pl.price) : "0đ") + (pl.per ? "<small>" + pl.per + "</small>" : "") + "</div><ul>" + pl.feats.map(function(f){ return "<li>" + f + "</li>"; }).join("") + "</ul>" + btn + "</div>";
       }).join("");
       $("shopGrid").innerHTML = LEVELS.map(function(l){
