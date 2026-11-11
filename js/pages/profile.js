@@ -14,7 +14,7 @@
       $("pfQuizPlays").textContent = p.quizPlays + " lượt";
       $("pfQuizBest").textContent = p.quizPlays ? p.quizBest + "/10" : "—";
       $("pfSpeak").textContent = p.speak + " lần";
-      var planObj = PLANS.filter(function(x){ return x.id === userPlan(); })[0];
+      var planObj = PLANS[currentUser.plan || "free"];
       $("pfPlan").textContent = planObj ? planObj.name : "Miễn phí";
       $("pfOwned").textContent = currentUser.owned && currentUser.owned.length ? currentUser.owned.join(", ") : "—";
       $("pfExamPlays").textContent = (p.examPlays || 0) + " lượt";
