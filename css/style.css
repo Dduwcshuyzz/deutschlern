@@ -1272,3 +1272,8 @@ footer.land .wrap>span{display:block;text-align:center}
 .lvl-row .bar-wrap span{color:#4D5B73}
 .quick-card{background:#FFFFFF;border-color:#E7ECF5}
 }
+
+/* Bảo vệ trang giới thiệu: class .df-title của màn trong app không được thu nhỏ tiêu đề hero. */
+.hero-df .df-title{font-size:clamp(2.05rem,4.6vw,3.15rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;color:#0D1524}
+@media (max-width:640px){.hero-df .df-title{font-size:1.9rem;line-height:1.15}}
+@media (prefers-color-scheme:dark){.hero-df .df-title{color:#0D1524}}
