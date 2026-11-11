@@ -967,3 +967,46 @@ width:1.32rem; height:1.32rem; stroke-width:1.7; flex:none;
 .hero-df .df-pv-note{color:rgba(255,255,255,.78);}
 .hero-df .df-pv-top .dots i{background:rgba(255,255,255,.85);}
 }
+
+
+/* ===== Sửa lỗi "loá" trên iPhone Safari (12/11/2026) — chỉ hero, không đổi JS ===== */
+/* NGUYÊN NHÂN: iPhone của Huy đang ở Chế độ tối (Dark Mode, prefers-color-scheme: dark).
+   Các khối @media (prefers-color-scheme: dark) trong file này đảo biến màu: --ink thành
+   #F5F7FC (gần trắng), --ink2 thành #A3B0C6 (xám nhạt), --btn-ink thành #FFFFFF (trắng),
+   --btn-ink-text thành #0B0D12 — trong khi body bị ép nền trắng (background:#FFFFFF trong
+   khối "Muse-clean"). Kết quả trên nền trắng: tiêu đề/mô tả/checklist dùng var(--ink /
+   --ink2) gần như tàng hình, nút CTA dùng var(--btn-ink) thành nút trắng chữ đen.
+   Trình duyệt test ở chế độ sáng nên không thấy lỗi. Hiệu ứng hiện dần KHÔNG phải nguyên
+   nhân: hero không nằm trong danh sách fx-reveal của JS, và dòng đỏ (span) vẫn hiện rõ
+   chứng tỏ animation fxFadeUp đã chạy xong. */
+/* 1. Khóa toàn trang ở bảng màu sáng: ở chế độ tối, ép các biến về đúng giá trị sáng. */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#FFFFFF; --surface:#FFFFFF; --surface2:#EDF3FF; --ink:#0D1524; --ink2:#4D5B73;
+    --line:#DEE7F5; --red:#D5001C; --red-dark:#A80016; --gold:#0061FF; --gold-soft:#E3EDFF;
+    --blue:#0061FF; --btn-ink:#0B0D12; --btn-ink-text:#FFFFFF;
+    --der:#0061FF; --die:#C2437E; --das:#0E7A5F;
+    --ok:#0E7A5F; --bad:#C0272D; --shadow:0 1px 2px rgba(10,32,84,.05),0 12px 32px rgba(10,32,84,.08);
+  }
+  body{ background:#FFFFFF; color:#0D1524; }
+}
+/* 2. Hero: màu chữ/nút ghi bằng giá trị tuyệt đối (không qua biến), thắng mọi quy tắc trước. */
+.hero-df{ color-scheme:light; }
+.hero-df .df-title{ color:#0D1524 !important; }
+.hero-df .df-title span{ color:#D5001C !important; }
+.hero-df .df-eyebrow{ color:#D5001C !important; }
+.hero-df .df-sub{ color:#33415C !important; }
+.hero-df .df-checks li{ color:#0D1524 !important; }
+.hero-df .df-checks li b{ background:#0061FF !important; color:#FFFFFF !important; }
+.hero-df .df-cta{ background:#0B0D12 !important; color:#FFFFFF !important; border-color:#0B0D12 !important; }
+.hero-df .df-cta .arr{ color:#FFFFFF !important; }
+.hero-df .df-have{ color:#0061FF !important; }
+.hero-df .df-realstats .st b{ color:#0D1524 !important; }
+.hero-df .df-realstats .st span{ color:#4D5B73 !important; }
+/* 3. Hero không phụ thuộc hiệu ứng hiện dần: bỏ animation mở đầu, trạng thái cuối luôn hiện. */
+.hero-df .df-grid > div:first-child{ animation:none !important; opacity:1 !important; transform:none !important; }
+.hero-df .df-preview{ animation:none !important; opacity:1 !important; transform:none !important; }
+.hero-df .fx-reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
+@media (prefers-reduced-motion: reduce){
+  .hero-df .df-grid > div:first-child, .hero-df .df-preview{ animation:none !important; }
+}
