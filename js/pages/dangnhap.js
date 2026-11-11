@@ -159,7 +159,7 @@
               if (res.error) { authErr(sbAuthErrVi(res.error)); return; }
               fieldErr("rgEmail", "eRgEmail", "Email này đã được đăng ký. Hãy đăng nhập hoặc dùng email khác.");
               return;
-            }
+            });
             var session = res.data.session;
             var done = function(sessUser){
               sbLoadAuthAccount(sessUser, function(acc){
