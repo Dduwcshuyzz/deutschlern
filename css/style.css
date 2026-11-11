@@ -1098,3 +1098,43 @@ footer.land .wrap>span{display:block;text-align:center}
   .df-realstats .st b,.ll-head b,.feat-row h3,.feat-card h3,.pv-card h3,.land-plans .plan-card h3,.step-card h3,.ft-grid h4{color:#0D1524 !important}
   .df-realstats .st span,.df-realstats .st small,.ll-desc,.feat-row p,.feat-card p,.pv-goal,.pv-note,.plan-tagline,.plan-note,.step-card p,.ft-grid p{color:#4D5B73 !important}
 }
+
+/* ===== Sửa lỗi menu "Tất cả mục học" tối, chữ không đọc được trên iPhone ở Dark Mode (12/11/2026) — chỉ màu/tương phản, không đổi JS/tính năng ===== */
+/* NGUYÊN NHÂN: commit 10d57b9 chỉ khóa các BIẾN màu (--ink, --btn-ink...) về bảng sáng trong
+   @media (prefers-color-scheme: dark), nhưng khối "Muse-clean" vẫn còn quy tắc Dark Mode viết
+   cứng nền tối: .btn-ghost{background:#0D1017!important; color:var(--ink)} — sau khi khóa,
+   var(--ink) là #0D1524 (chữ tối) nên thành chữ tối trên nền tối #0D1017. Các nút trong bảng
+   "Tất cả mục học" (index.html, .more-sheet .sheet-grid) đều là .btn.btn-ghost, nên đều mờ;
+   chỉ nút "Đăng xuất" (.btn.btn-red, chỉ dùng biến --btn-ink/--btn-ink-text đã khóa) còn đọc
+   được: nền #0B0D12, chữ #FFFFFF. Cùng kiểu lệch còn ở .card, ô nhập, tab đăng nhập, thanh
+   bottombar và thẻ xem trước hero (.df-stat span #A3B0C6 trên nền trắng). */
+/* Khóa lại bằng màu tuyệt đối, đặt cuối file để thắng mọi quy tắc Dark Mode trước đó. */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#FFFFFF; --surface:#FFFFFF; --surface2:#EDF3FF; --ink:#0D1524; --ink2:#4D5B73;
+    --line:#DEE7F5; --red:#D5001C; --blue:#0061FF; --gold:#0061FF; --gold-soft:#E3EDFF;
+    --btn-ink:#0B0D12; --btn-ink-text:#FFFFFF; --tab-bar-bg:#FFFFFF; --tab-pill:#E2EDFF;
+  }
+  body{ background:#FFFFFF !important; color:#0D1524 !important; }
+  .more-sheet{ color-scheme:light; }
+  .more-sheet .sheet{ background:#FFFFFF !important; color:#0D1524 !important; border-color:#DEE7F5 !important; }
+  .more-sheet h3{ color:#0D1524 !important; }
+  .btn-ghost{ background:#FFFFFF !important; color:#0D1524 !important; border:1px solid #DEE7F5 !important; }
+  .btn-ghost:hover{ background:#E3EDFF !important; }
+  .more-sheet .btn-red, .btn-red{ background:#0B0D12 !important; color:#FFFFFF !important; border-color:#0B0D12 !important; }
+  .card, .stat, .term-item, .qa-item{ background:#FFFFFF !important; border-color:#DEE7F5 !important; color:#0D1524 !important; }
+  .tag{ background:#E3EDFF !important; color:#0061FF !important; }
+  .tag.red{ background:#D5001C !important; color:#FFFFFF !important; }
+  .tag.green{ background:#E2F4EC !important; color:#0E7A5F !important; }
+  input[type="text"], input[type="email"], input[type="password"], input[type="search"], select, textarea{ background:#FFFFFF !important; color:#0D1524 !important; border-color:#DEE7F5 !important; }
+  .auth-tabs button{ background:#FFFFFF !important; color:#4D5B73 !important; }
+  .auth-tabs button.on{ background:#FFFFFF !important; color:#0D1524 !important; }
+  .topbar{ background:#FFFFFF !important; border-color:#DEE7F5 !important; }
+  .topbar a{ color:#0D1524 !important; }
+  .bottombar{ background:#FFFFFF !important; border-top-color:#DEE7F5 !important; }
+  .bottombar button{ color:#4D5B73 !important; }
+  .bottombar button.on{ color:#0061FF !important; }
+  .bottombar button.on .tab-ic{ background:#E2EDFF !important; color:#0061FF !important; }
+  .hero-df .df-stat span{ color:#4D5B73 !important; }
+  .hero-df .df-stat b{ color:#0D1524 !important; }
+}
